@@ -7,42 +7,26 @@ var webpackConfig = {
   entry: {
     'polyfills': './src/polyfills.ts',
     'vendor':    './src/vendor.ts',
-    'app':       './src/app.ts',
+    'app':       './src/app.ts'
   },
 
   output: {
-    path: './dist',
+    path: './dist'
   },
 
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({ name: ['app', 'vendor', 'polyfills'], minChunks: Infinity }),
+    new webpack.optimize.CommonsChunkPlugin({ name: ['app', 'vendor', 'polyfills'], minChunks: Infinity })
   ],
 
   module: {
     loaders: [
       // .ts files for TypeScript
-      { test: /\.ts$/, loader: 'awesome-typescript-loader' },
+      { test: /\.ts$/, loader: 'awesome-typescript-loader' }
 
     ]
   }
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Our Webpack Defaults
 var defaultConfig = {
@@ -64,7 +48,7 @@ var defaultConfig = {
           // these packages have problems with their sourcemaps
           path.join(__dirname, 'node_modules', 'rxjs'),
           path.join(__dirname, 'node_modules', '@angular2-material'),
-          path.join(__dirname, 'node_modules', '@angular'),
+          path.join(__dirname, 'node_modules', '@angular')
         ]
       }
     ],
@@ -86,7 +70,7 @@ var defaultConfig = {
       'angular2/router': path.join(__dirname, 'node_modules', '@angular', 'router-deprecated', 'index.js'),
       'angular2/http': path.join(__dirname, 'node_modules', '@angular', 'http', 'index.js'),
       'angular2/http/testing': path.join(__dirname, 'node_modules', '@angular', 'http', 'testing.js')
-    },
+    }
   },
 
   devServer: {
@@ -101,7 +85,7 @@ var defaultConfig = {
     Buffer: 0,
     clearImmediate: 0,
     setImmediate: 0
-  },
+  }
 }
 
 var webpackMerge = require('webpack-merge');
